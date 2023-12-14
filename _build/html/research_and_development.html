@@ -388,11 +388,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\mehdi\AppData\Local\Temp\ipykernel_10456\4051237116.py:3: UserWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\mehdi\AppData\Local\Temp\ipykernel_28568\4051237116.py:3: UserWarning: 
 The dash_core_components package is deprecated. Please replace
 `import dash_core_components as dcc` with `from dash import dcc`
   import dash_core_components as dcc
-C:\Users\mehdi\AppData\Local\Temp\ipykernel_10456\4051237116.py:4: UserWarning: 
+C:\Users\mehdi\AppData\Local\Temp\ipykernel_28568\4051237116.py:4: UserWarning: 
 The dash_html_components package is deprecated. Please replace
 `import dash_html_components as html` with `from dash import html`
   import dash_html_components as html
@@ -493,16 +493,107 @@ The dash_html_components package is deprecated. Please replace
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">
-        <iframe
-            width="100%"
-            height="650"
-            src="http://127.0.0.1:8050/"
-            frameborder="0"
-            allowfullscreen
-            
-        ></iframe>
-        </div></div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">OSError</span><span class="g g-Whitespace">                                   </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">84</span>
+<span class="g g-Whitespace">     </span><span class="mi">81</span>     <span class="k">return</span> <span class="n">fig</span>
+<span class="g g-Whitespace">     </span><span class="mi">83</span> <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">84</span>     <span class="n">app</span><span class="o">.</span><span class="n">run_server</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nn">File ~\miniconda3\lib\site-packages\dash\dash.py:2175,</span> in <span class="ni">Dash.run_server</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2169</span> <span class="k">def</span> <span class="nf">run_server</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">2170</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;`run_server` is a deprecated alias of `run` and may be removed in a</span>
+<span class="g g-Whitespace">   </span><span class="mi">2171</span><span class="sd">     future version. We recommend using `app.run` instead.</span>
+<span class="g g-Whitespace">   </span><span class="mi">2172</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">2173</span><span class="sd">     See `app.run` for usage information.</span>
+<span class="g g-Whitespace">   </span><span class="mi">2174</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">2175</span>     <span class="bp">self</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~\miniconda3\lib\site-packages\dash\dash.py:2066,</span> in <span class="ni">Dash.run</span><span class="nt">(self, host, port, proxy, debug, jupyter_mode, jupyter_width, jupyter_height, jupyter_server_url, dev_tools_ui, dev_tools_props_check, dev_tools_serve_dev_bundles, dev_tools_hot_reload, dev_tools_hot_reload_interval, dev_tools_hot_reload_watch_interval, dev_tools_hot_reload_max_retry, dev_tools_silence_routes_logging, dev_tools_prune_errors, **flask_run_options)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2063</span>             <span class="n">extra_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2065</span> <span class="k">if</span> <span class="n">jupyter_dash</span><span class="o">.</span><span class="n">active</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2066</span>     <span class="n">jupyter_dash</span><span class="o">.</span><span class="n">run_app</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">2067</span>         <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2068</span>         <span class="n">mode</span><span class="o">=</span><span class="n">jupyter_mode</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2069</span>         <span class="n">width</span><span class="o">=</span><span class="n">jupyter_width</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2070</span>         <span class="n">height</span><span class="o">=</span><span class="n">jupyter_height</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2071</span>         <span class="n">host</span><span class="o">=</span><span class="n">host</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2072</span>         <span class="n">port</span><span class="o">=</span><span class="n">port</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2073</span>         <span class="n">server_url</span><span class="o">=</span><span class="n">jupyter_server_url</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2074</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2075</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2076</span>     <span class="bp">self</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="n">port</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="n">debug</span><span class="p">,</span> <span class="o">**</span><span class="n">flask_run_options</span><span class="p">)</span>
+
+<span class="nn">File ~\miniconda3\lib\site-packages\dash\_jupyter.py:401,</span> in <span class="ni">JupyterDash.run_app</span><span class="nt">(self, app, mode, width, height, host, port, server_url)</span>
+<span class="g g-Whitespace">    </span><span class="mi">399</span>     <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">msg</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">400</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">401</span>     <span class="k">raise</span> <span class="n">final_error</span>
+
+<span class="nn">File ~\miniconda3\lib\site-packages\dash\_jupyter.py:388,</span> in <span class="ni">JupyterDash.run_app</span><span class="nt">(self, app, mode, width, height, host, port, server_url)</span>
+<span class="g g-Whitespace">    </span><span class="mi">385</span>         <span class="k">raise</span> <span class="n">err</span>
+<span class="g g-Whitespace">    </span><span class="mi">387</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">388</span>     <span class="n">wait_for_app</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">390</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">in_colab</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">391</span>         <span class="n">JupyterDash</span><span class="o">.</span><span class="n">_display_in_colab</span><span class="p">(</span><span class="n">dashboard_url</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+
+<span class="nn">File ~\miniconda3\lib\site-packages\retrying.py:56,</span> in <span class="ni">retry.&lt;locals&gt;.wrap.&lt;locals&gt;.wrapped_f</span><span class="nt">(*args, **kw)</span>
+<span class="g g-Whitespace">     </span><span class="mi">54</span> <span class="nd">@six</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">55</span> <span class="k">def</span> <span class="nf">wrapped_f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">56</span>     <span class="k">return</span> <span class="n">Retrying</span><span class="p">(</span><span class="o">*</span><span class="n">dargs</span><span class="p">,</span> <span class="o">**</span><span class="n">dkw</span><span class="p">)</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+
+<span class="nn">File ~\miniconda3\lib\site-packages\retrying.py:266,</span> in <span class="ni">Retrying.call</span><span class="nt">(self, fn, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">263</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">stop</span><span class="p">(</span><span class="n">attempt_number</span><span class="p">,</span> <span class="n">delay_since_first_attempt_ms</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">264</span>     <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wrap_exception</span> <span class="ow">and</span> <span class="n">attempt</span><span class="o">.</span><span class="n">has_exception</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">265</span>         <span class="c1"># get() on an attempt with an exception should cause it to be raised, but raise just in case</span>
+<span class="ne">--&gt; </span><span class="mi">266</span>         <span class="k">raise</span> <span class="n">attempt</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">267</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">268</span>         <span class="k">raise</span> <span class="n">RetryError</span><span class="p">(</span><span class="n">attempt</span><span class="p">)</span>
+
+<span class="nn">File ~\miniconda3\lib\site-packages\retrying.py:301,</span> in <span class="ni">Attempt.get</span><span class="nt">(self, wrap_exception)</span>
+<span class="g g-Whitespace">    </span><span class="mi">299</span>         <span class="k">raise</span> <span class="n">RetryError</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">300</span>     <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">301</span>         <span class="n">six</span><span class="o">.</span><span class="n">reraise</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="g g-Whitespace">    </span><span class="mi">302</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">303</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span>
+
+<span class="nn">File ~\miniconda3\lib\site-packages\six.py:719,</span> in <span class="ni">reraise</span><span class="nt">(tp, value, tb)</span>
+<span class="g g-Whitespace">    </span><span class="mi">717</span>     <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">__traceback__</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">tb</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">718</span>         <span class="k">raise</span> <span class="n">value</span><span class="o">.</span><span class="n">with_traceback</span><span class="p">(</span><span class="n">tb</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">719</span>     <span class="k">raise</span> <span class="n">value</span>
+<span class="g g-Whitespace">    </span><span class="mi">720</span> <span class="k">finally</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">721</span>     <span class="n">value</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="nn">File ~\miniconda3\lib\site-packages\retrying.py:251,</span> in <span class="ni">Retrying.call</span><span class="nt">(self, fn, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">248</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_before_attempts</span><span class="p">(</span><span class="n">attempt_number</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">250</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">251</span>     <span class="n">attempt</span> <span class="o">=</span> <span class="n">Attempt</span><span class="p">(</span><span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">),</span> <span class="n">attempt_number</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">252</span> <span class="k">except</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">253</span>     <span class="n">tb</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()</span>
+
+<span class="nn">File ~\miniconda3\lib\site-packages\dash\_jupyter.py:379,</span> in <span class="ni">JupyterDash.run_app.&lt;locals&gt;.wait_for_app</span><span class="nt">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">377</span>     <span class="k">if</span> <span class="n">res</span> <span class="o">!=</span> <span class="s2">&quot;Alive&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">378</span>         <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;http://</span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">379</span>         <span class="k">raise</span> <span class="ne">OSError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">380</span>             <span class="sa">f</span><span class="s2">&quot;Address &#39;</span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">&#39; already in use.</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">381</span>             <span class="s2">&quot;    Try passing a different port to run_server.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">382</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">383</span> <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">ConnectionError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">384</span>     <span class="n">_get_error</span><span class="p">()</span>
+
+<span class="ne">OSError</span>: Address &#39;http://127.0.0.1:8050&#39; already in use.
+    <span class="n">Try</span> <span class="n">passing</span> <span class="n">a</span> <span class="n">different</span> <span class="n">port</span> <span class="n">to</span> <span class="n">run_server</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">df1</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span> <span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;VALUE&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
 </div>
 </section>
 
