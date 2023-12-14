@@ -5,6 +5,12 @@ format: jb-book
 root: intro
 chapters:
 - file: introduction
-- file: notebooks
-- file: markdown-notebooks
-- file: report
+- file: healthcare
+- file: costofliving
+- file: housing
+- file: jobsandtraining
+- file: safecommunities
+- file: climateaction
+- file: economicplan
+  sections:
+  - file: research_and_development
