@@ -1,5 +1,6 @@
 # StrongerBC Plan: A Vision for a Cleaner and Inclusive Economy
 
+
 ## Introduction
 B.C. is facing many challenges in the 21st century, such as rising costs of living, housing shortages, health care pressures, climate change impacts, and global competition. To overcome these challenges and build a stronger B.C. for everyone, the provincial government has developed the StrongerBC plan, which sets out two big goals: inclusive and clean growth.
 
@@ -31,3 +32,9 @@ Another goal of the StrongerBC plan is to tackle climate change by fostering inn
 These initiatives will help reduce greenhouse gas emissions from various sectors of the economy while creating new markets opportunities jobs growth innovation. They will also help enhance B.C.'s reputation as an environmentally responsible leader among domestic international partners.
 
 The StrongerBC plan is a comprehensive vision for building an economy that works for everyone in B.C., from health care education housing jobs training safe communities climate action economic plan budget 2023 . By putting people first delivering clean inclusive growth building stronger B.C . everyone ,the provincial government hopes to achieve its long-term goals of making life better improving well-being enhancing prosperity advancing sustainability .
+
+
+%%python
+from IPython.display import YouTubeVideo
+start = int(timedelta(hours=1, minutes=46, seconds=40).total_seconds())
+YouTubeVideo('b_pTxGu2L04', start=start)

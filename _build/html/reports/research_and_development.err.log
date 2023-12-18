@@ -15,7 +15,7 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-
+pio.renderers.default = 'notebook'
 df1 = pd.read_csv("~/strongerbc/data/research_and_development_1.csv")
 df = df1[df1['Year'] >= 2000]
 app = dash.Dash(__name__)
@@ -25,10 +25,9 @@ labels = {str(year): str(year) for year in range(df['Year'].min(), df['Year'].ma
 steps = {str(year): '' for year in range(df['Year'].min(), df['Year'].max() + 1)}
 marks = {**steps, **labels}
 
-
 app.layout = html.Div([
     html.Div([
-        dcc.Graph(id='value-graph')
+        dcc.Graph(id='value-graph', config={'scrollZoom': False})
     ], style={'width': '100%', 'display': 'inline-block'}),
     html.Div([
         dcc.RangeSlider(
@@ -39,31 +38,40 @@ app.layout = html.Div([
             marks=marks,
             step=None
         ),
-        dcc.Dropdown(
-            id='geo-dropdown',
-            options=[{'label': i, 'value': i} for i in df['GEO'].unique()],
-            value=df['GEO'].unique()[0]
-        ),
-        dcc.Dropdown(
-            id='Funder-dropdown',
-            options=[{'label': i, 'value': i} for i in df['Funder'].unique()],
-            value=df['Funder'].unique()[0]
-        ),
-        dcc.Dropdown(
-            id='Performer-dropdown',
-            options=[{'label': i, 'value': i} for i in df['Performer'].unique()],
-            value=df['Performer'].unique()[0]
-        ),
-        dcc.Dropdown(
-            id='ScienceType-dropdown',
-            options=[{'label': i, 'value': i} for i in df['Science type'].unique()],
-            value=df['Science type'].unique()[0]
-        ),
-        dcc.Dropdown(
-            id='Prices-dropdown',
-            options=[{'label': i, 'value': i} for i in df['Prices'].unique()],
-            value=df['Prices'].unique()[0]
-        )
+        html.Div([
+            dcc.Dropdown(
+                id='geo-dropdown',
+                options=[{'label': i, 'value': i} for i in df['GEO'].unique()],
+                value=df['GEO'].unique()[0],
+                style={'width': '30%'}
+            ),
+            dcc.Dropdown(
+                id='Prices-dropdown',
+                options=[{'label': i, 'value': i} for i in df['Prices'].unique()],
+                value=df['Prices'].unique()[0],
+                style={'width': '30%'}
+            ),
+            dcc.Dropdown(
+                id='ScienceType-dropdown',
+                options=[{'label': i, 'value': i} for i in df['Science type'].unique()],
+                value=df['Science type'].unique()[0],
+                style={'width': '30%'}
+            )
+        ], style={'width': '100%', 'display': 'flex', 'justify-content': 'space-between'}),
+        html.Div([
+            dcc.Dropdown(
+                id='Funder-dropdown',
+                options=[{'label': i, 'value': i} for i in df['Funder'].unique()],
+                value=df['Funder'].unique()[0],
+                style={'width': '45%'}
+            ),
+            dcc.Dropdown(
+                id='Performer-dropdown',
+                options=[{'label': i, 'value': i} for i in df['Performer'].unique()],
+                value=df['Performer'].unique()[0],
+                style={'width': '45%'}
+            )
+        ], style={'width': '100%', 'display': 'flex', 'justify-content': 'space-between'})
     ], style={'width': '100%', 'display': 'inline-block'}),
 ])
 
@@ -94,21 +102,25 @@ def update_graph(year_range, geo_value, Funder_value, Performer_value, ScienceTy
         'y':0.9,
         'x':0.5,
         'xanchor': 'center',
-        'yanchor': 'top'})
+        'yanchor': 'top'},
+    autosize=True)
 
     return fig
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(mode='jupyterlab', port = 8099, dev_tools_ui=True, #debug=True,
+              dev_tools_hot_reload =True, threaded=True)
+
 ------------------
 
 
 [1;31m---------------------------------------------------------------------------[0m
 [1;31mOSError[0m                                   Traceback (most recent call last)
-Cell [1;32mIn[3], line 84[0m
-[0;32m     81[0m     [38;5;28;01mreturn[39;00m fig
-[0;32m     83[0m [38;5;28;01mif[39;00m [38;5;18m__name__[39m [38;5;241m==[39m [38;5;124m'[39m[38;5;124m__main__[39m[38;5;124m'[39m:
-[1;32m---> 84[0m     [43mapp[49m[38;5;241;43m.[39;49m[43mrun_server[49m[43m([49m[43mdebug[49m[38;5;241;43m=[39;49m[38;5;28;43;01mTrue[39;49;00m[43m)[49m
+Cell [1;32mIn[5], line 94[0m
+[0;32m     91[0m     [38;5;28;01mreturn[39;00m fig
+[0;32m     93[0m [38;5;28;01mif[39;00m [38;5;18m__name__[39m [38;5;241m==[39m [38;5;124m'[39m[38;5;124m__main__[39m[38;5;124m'[39m:
+[1;32m---> 94[0m     [43mapp[49m[38;5;241;43m.[39;49m[43mrun_server[49m[43m([49m[43mmode[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43mjupyterlab[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[43mport[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[38;5;241;43m8099[39;49m[43m,[49m[43m [49m[43mdev_tools_ui[49m[38;5;241;43m=[39;49m[38;5;28;43;01mTrue[39;49;00m[43m,[49m[43m [49m[38;5;66;43;03m#debug=True,[39;49;00m
+[0;32m     95[0m [43m              [49m[43mdev_tools_hot_reload[49m[43m [49m[38;5;241;43m=[39;49m[38;5;28;43;01mTrue[39;49;00m[43m,[49m[43m [49m[43mthreaded[49m[38;5;241;43m=[39;49m[38;5;28;43;01mTrue[39;49;00m[43m)[49m
 
 File [1;32m~\miniconda3\lib\site-packages\dash\dash.py:2175[0m, in [0;36mDash.run_server[1;34m(self, *args, **kwargs)[0m
 [0;32m   2169[0m [38;5;28;01mdef[39;00m [38;5;21mrun_server[39m([38;5;28mself[39m, [38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkwargs):
@@ -190,6 +202,6 @@ File [1;32m~\miniconda3\lib\site-packages\dash\_jupyter.py:379[0m, in [0;36mJ
 [0;32m    383[0m [38;5;28;01mexcept[39;00m requests[38;5;241m.[39mConnectionError [38;5;28;01mas[39;00m err:
 [0;32m    384[0m     _get_error()
 
-[1;31mOSError[0m: Address 'http://127.0.0.1:8050' already in use.
+[1;31mOSError[0m: Address 'http://127.0.0.1:8099' already in use.
     Try passing a different port to run_server.
 

@@ -1,0 +1,15 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: introduction
+chapters:
+- file: healthcare
+- file: costofliving
+- file: housing
+- file: jobsandtraining
+- file: safecommunities
+- file: climateaction
+- file: economicplan
+  sections:
+  - file: research_and_development
